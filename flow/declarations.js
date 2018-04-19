@@ -22,7 +22,8 @@ declare type Dictionary<T> = { [key: string]: T }
 declare type NavigationGuard = (
   to: Route,
   from: Route,
-  next: (to?: RawLocation | false | Function | void) => void
+  next: (to?: RawLocation | false | Function | void) => void,
+  matched?: RouteRecord
 ) => any
 
 declare type AfterNavigationHook = (to: Route, from: Route) => any

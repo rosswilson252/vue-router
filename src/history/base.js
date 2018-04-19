@@ -165,6 +165,7 @@ export class History {
       const isValid = () => this.current === route
       // wait until async components are resolved before
       // extracting in-component enter guards
+      console.log(activated)
       const enterGuards = extractEnterGuards(activated, postEnterCbs, isValid)
       const queue = enterGuards.concat(this.router.resolveHooks)
       runQueue(queue, iterator, () => {
@@ -308,7 +309,7 @@ function bindEnterGuard (
           poll(cb, match.instances, key, isValid)
         })
       }
-    })
+    }, match)
   }
 }
 
